@@ -54,6 +54,11 @@ fi
 if [ ! -z "$AVOID_SPECIAL_FILE_WARNING" ]; then
 	export AVOID_SPECIAL_FILE_WARNING
 fi
+if [ -z "$LANG" ]; then
+	# Default to UTF8 encoding, if unset.
+	# Necessary for bzr to function in eg cron.
+	export LANG=en_US.UTF-8
+fi
 
 if [ ! -z "$PUSH_REMOTE" ]; then
 	export PUSH_REMOTE
